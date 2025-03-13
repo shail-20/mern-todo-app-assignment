@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/todos";
+const API_URL = "http://mern-todo-app-assignment.vercel.app/api/todos";
 
 export const fetchTodos = async () => axios.get(API_URL);
 export const addTodo = async (todo) => axios.post(API_URL, todo);
