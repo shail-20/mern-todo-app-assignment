@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
-const API_URL = "http://localhost:5000/api/todos";
+const API_URL = "http://mern-todo-app-assignment.vercel.app/api/todos";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -31,7 +31,7 @@ const TodoList = () => {
     setTodos(reorderedTodos);
   
     try {
-      await axios.put("http://localhost:5000/api/todos/reorder", { todos }, {
+      await axios.put("http://mern-todo-app-assignment.vercel.app/api/todos/reorder", { todos }, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true, // Ensures request is accepted by CORS
       });
