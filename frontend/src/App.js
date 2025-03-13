@@ -10,7 +10,7 @@ function App() {
 
   // 📌 Fetch Todos
   const fetchTodos = async () => {
-    const { data } = await axios.get("http://localhost:5000/api/todos");
+    const { data } = await axios.get("http://mern-todo-app-assignment.vercel.app/api/todos");
     setTodos(data);
   };
 
@@ -21,7 +21,7 @@ function App() {
   // 📌 Add Todo
   const addTodo = async () => {
     if (!title.trim()) return;
-    await axios.post("http://localhost:5000/api/todos", { title, link });
+    await axios.post("http://mern-todo-app-assignment.vercel.app/api/todos", { title, link });
     setTitle("");
     setLink("");
     fetchTodos();
@@ -29,7 +29,7 @@ function App() {
 
   // 📌 Toggle Complete
   const toggleComplete = async (id, completed) => {
-    await axios.put(`http://localhost:5000/api/todos/${id}`, { completed: !completed });
+    await axios.put(`http://mern-todo-app-assignment.vercel.app/api/todos/${id}`, { completed: !completed });
     fetchTodos();
   };
 
@@ -42,7 +42,7 @@ function App() {
     updatedTodos.splice(result.destination.index, 0, movedItem);
 
     setTodos(updatedTodos);
-    await axios.put("http://localhost:5000/api/todos/reorder", { todos }, {
+    await axios.put("http://mern-todo-app-assignment.vercel.app/api/todos/reorder", { todos }, {
         headers: { "Content-Type": "application/json" }
       });
       
@@ -50,7 +50,7 @@ function App() {
 
   // 📌 Delete Todo
   const deleteTodo = async (id) => {
-    await axios.delete(`http://localhost:5000/api/todos/${id}`);
+    await axios.delete(`http://mern-todo-app-assignment.vercel.app/api/todos/${id}`);
     fetchTodos();
   };
 
